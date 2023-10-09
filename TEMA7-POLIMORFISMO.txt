@@ -1,0 +1,57 @@
+1. Crie um novo projeto Java no NetBeans.
+
+2. Crie a superclasse Veiculo:
+
+public class Veiculo {
+
+    private int velocidade;
+
+    public int getVelocidade() {
+        return velocidade;
+    }
+
+    public void acelerar() {
+        velocidade += 10;
+        System.out.println("Acelerando o veículo. Velocidade atual: " + velocidade + " km/h");
+    }
+}
+
+3. Crie a subclasse Moto:
+
+public class Moto extends Veiculo {
+
+    @Override
+    public void acelerar() {
+        int velocidade = getVelocidade();
+        velocidade += 20;  // A moto acelera mais rapidamente.
+        System.out.println("Acelerando a moto. Velocidade atual: " + velocidade + " km/h");
+    }
+}
+
+4. Crie a subclasse Carro:
+
+public class Carro extends Veiculo {
+
+    @Override
+    public void acelerar() {
+        int velocidade = getVelocidade();
+        velocidade += 5;  // O carro acelera mais lentamente.
+        System.out.println("Acelerando o carro. Velocidade atual: " + velocidade + " km/h");
+    }
+}
+
+5. No método main, use o polimorfismo para tratar ambos, Moto e Carro, como Veiculo e chamar seus métodos acelerar() polimorficamente:
+
+public class TestePolimorfismo {
+
+    public static void main(String[] args) {
+        Veiculo minhaMoto = new Moto();
+        Veiculo meuCarro = new Carro();
+
+        System.out.println("Para a Moto:");
+        minhaMoto.acelerar();
+
+        System.out.println("\nPara o Carro:");
+        meuCarro.acelerar();
+    }
+}
