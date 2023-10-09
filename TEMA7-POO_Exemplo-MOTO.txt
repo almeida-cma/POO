@@ -1,0 +1,64 @@
+Projeto MotoProject:
+JacaClass -> Moto
+
+public class Moto {
+
+    String modelo, marca, nroChassi, nroPlaca, cor;
+    boolean licenciada;
+    int nroCilindradas;
+
+    public void licenciar() {
+        licenciada = true;
+        System.out.println("Moto licenciada.");
+    }
+
+    public void verificaLicenca() {
+        if (licenciada) {
+            System.out.println("Moto já está licenciada.");
+        } else {
+            System.out.println("Moto não está licenciada.");
+        }
+    }
+
+    public void apresentarLicenca() {
+        if (licenciada) {
+            System.out.println("Detalhes da Licença da Moto:");
+            System.out.println("Modelo: " + modelo);
+            System.out.println("Marca: " + marca);
+            System.out.println("Número de Chassi: " + nroChassi);
+            System.out.println("Número da Placa: " + nroPlaca);
+            System.out.println("Cor: " + cor);
+            System.out.println("Número de Cilindradas: " + nroCilindradas);
+        } else {
+            System.out.println("A moto não está licenciada.");
+        }
+    }
+    
+    public void impedirLicenca() {
+        licenciada = false;
+        System.out.println("Licença da moto revogada.");
+    }
+}
+-------------------------------------------------------------------------------------------
+Main MotoProject
+
+public class MotoProject {
+
+    public static void main(String[] args) {
+        Moto m1 = new Moto();
+        m1.cor = "Azul";
+        m1.marca = "Honda";
+        m1.modelo = "Twister";
+        m1.nroChassi = "909090333333111";
+        m1.nroCilindradas = 250;
+        m1.nroPlaca = "ABC12C4";
+
+        m1.licenciar();
+        m1.verificaLicenca();
+        m1.apresentarLicenca();
+        m1.impedirLicenca();
+        m1.verificaLicenca();
+    }
+
+}
+---------------------------------------------------------
